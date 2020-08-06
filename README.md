@@ -18,32 +18,34 @@
     - Scikit learn
  
 ### Introducing a Dataset <a name="dataset-introduction"></a>
-This data set contains simulated data that mimics customer behavior on the Starbucks rewards mobile app. Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discount or BOGO (buy one get one free). Some users might not receive any offer during certain weeks.
 
-Not all users receive the same offer, and that is the challenge to solve with this data set.
+
+The dataset has the simulated data which mimics the behaviour of the customer using  Starbucks rewards mobile app. An offer may be simply a commercial for a drink or a real provide including a reduction or BOGO (buy one get one free) or just an informational provide which has the product information. A few customers probably won’t get any offers during specific weeks. So, Starbucks can most likely increase the likelihood that the customer opens the offer claim it. By reminding them of the latest information on the product and help to improve customer loyalty.
+
+Challange here is that, not all customers receive the same offer. 
 
 ### Project Motivation <a name="project-motivation"></a>
-It is the Starbuck's Capstone Challenge of the Data Scientist Nanodegree in Udacity. We get the dataset from the program that creates the data simulates how people make purchasing decisions and how those decisions are influenced by promotional offers. We want to make a recommendation engine that recommends Starbucks which offer should be sent to a particular customer.
+Dataset is obtained from the program which creates data and simulates the way of customers purchasing decisions and analyse how those particular decision is motivated by the offers given. Our aim is to build a recommendation engine which recommends which offer Starbucks to be sent to a particular customer by answering the following questions,
 
 We are interested to answer the following two questions:
 
-1. hich offer should be sent to a particular customer to let the customer buy more?
+1. Which offer should be sent to a particular customer to let the customer buy more?
 2. Which demographic groups respond best to which offer type?
 
 
 ### Data Preparation <a name="data-preparation"></a>
-There are three datasets provided and each dataset is cleaned and preprocessed for further analysis. The target features for analysis are offer_success, percent_success.
+There are 3 datasets provided and for further analysis each dataset is cleaned and preprocessed. The target features for analysis are offer_success, percent_success.
 
-1. Portfolio - renaming id column name to offer_id, one-hot encoding of channels and offer_type columns
-2. Profile - profile: renaming id column name to customer_id, replacing age value 118 to nan, creating readable date format in became_member_on column, dropping rows with no gender, income, age data, converting gender values to numeric 0s and 1s, adding start year and start month columns (for further analysis)
-3. Transcript - renaming person column name to customer_id, creating separate columns for amount and offer_id from value col, dropping transaction rows whose customer_id is not in profile:customer_id, converting time in hours to time in days, segregating offer and transaction data, finally dropping duplicates if any
+1. Portfolio - Column “Id” was renamed to “offer_id” and columns “Channels” and “offer_type” were one-hot encoded.
+2. Profile - Column “Id” was renamed to “customer_id”, “Age” value 118 is replaced to NaN, Readable date format created in “became_member_on” column, rows with no income, age and gender data are dropped.
+3. Transcript - Column “person” was renamed to “customer_id”, different columns for “amount” and “offer_id” created using “value” column, in the rows where “customer_id” is not present in “profile:customer_id” is dropped.
 
 ### File Descriptions <a name="files"></a>
 1. data:
 
-- portfolio.json - containing offer ids and meta data about each offer (duration, type, etc.).
-- profile.json - demographic data for each customer.
-- transcript.json - records for transactions, offers received, offers viewed, and offers completed.
+- portfolio.json: Metadata about each offers and their offer ID’s -10 rows x 6 columns
+- profile.json : Each customer demographic data — 17000 rows x 5 columns
+- transcript.json: Transaction records, received, viewed and completed offers — 306534 x 4 columns.
 2. Starbucks_Capstone_notebook.* : contains notebook file.
 
 ### Results<a name="results"></a>
